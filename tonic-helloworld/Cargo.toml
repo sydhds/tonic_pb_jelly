@@ -1,0 +1,21 @@
+[package]
+name = "tonic-helloworld"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "tonic-server-helloworld"
+path = "src/server.rs"
+
+[[bin]]
+name = "tonic-client-helloworld"
+path = "src/client.rs"
+
+[dependencies]
+tonic = { workspace = true }
+tonic-reflection = { workspace = true }
+tokio = { workspace = true }
+prost = "0.13"
+
+[build-dependencies]
+tonic-build = "*"

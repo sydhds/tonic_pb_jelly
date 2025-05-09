@@ -1,0 +1,12 @@
+[workspace]
+members = [ "pb-jelly-gen","tonic-helloworld"
+, "tonic-pb-jelly"]
+resolver = "2"
+
+[workspace.dependencies]
+tonic = "0.13"
+tonic-reflection = "*"
+tokio = {version = "1", features = ["full"]}
+bytes = "1.10"
+pb-jelly = "0.0.17"
+pb-jelly-gen = "*"

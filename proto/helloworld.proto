@@ -1,0 +1,23 @@
+syntax = "proto3";
+package helloworld;
+
+import "rust/extensions.proto";
+
+// Request
+message HelloRequest {
+  string name = 1;
+  bytes id = 2 [(rust.type)="[u8; 8]"];
+}
+
+// Reply
+message HelloReply {
+  string message = 1;
+}
+
+service Greeter {
+  // SayHello is the RPC request name
+  // SayHello parameter type is: HelloRequest and return a HelloReply type
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+

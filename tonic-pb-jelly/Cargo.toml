@@ -1,0 +1,23 @@
+[package]
+name = "tonic-pb-jelly"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "tonic-pb-jelly-server"
+path = "src/main.rs"
+
+[[bin]]
+name = "tonic-pb-jelly-client"
+path = "src/client.rs"
+
+[dependencies]
+tonic = { workspace = true }
+tonic-reflection = { workspace = true }
+tokio = { workspace = true }
+bytes = { workspace = true }
+pb-jelly = { workspace = true }
+proto_helloworld = { path = "../gen/rust/proto/proto_helloworld" }
+
+[build-dependencies]
+tonic-build = "*"
